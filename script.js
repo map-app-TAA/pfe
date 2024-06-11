@@ -76,7 +76,7 @@ function coordonitedfunction() {
                 
                 var z = await fetchElevation(lonLat[1], lonLat[0]);
 
-                var content = "X: " + lonLat[0].toFixed(6) + '<br>' + "Y: " + lonLat[1].toFixed(6) + '<br>' + "Z: " + z.toFixed(2)+"m";
+                var content = "X: " + lonLat[0].toFixed(6) + '<br>' + "Y: " + lonLat[1].toFixed(6) + '<br>' + "Z: " + z.toFixed()+"m";
 
                 coordinateOverlay.getElement().innerHTML = content;
                 coordinateOverlay.setPosition(storecoordinate); 
