@@ -10,10 +10,9 @@ var map = new ol.Map({ // new map (using open layers)
     layers: [ // this is an array for control the layers
         
         new ol.layer.Tile({ // add the tile layer
-           source: new ol.source.StadiaMaps({
-        layer: 'alidade_satellite',
-        retina: false,
-           })
+            source: new ol.source.XYZ({// source of the tile layer
+                url: "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.jpg?api_key=c39d1676-362f-4525-8753-5c9c039292f8",
+            })
         })
     ],
     view: new ol.View({            // control map view          
@@ -77,7 +76,7 @@ function coordonitedfunction() {
                 
                 var z = await fetchElevation(lonLat[1], lonLat[0]);
 
-                var content = "X: " + lonLat[0].toFixed(6) + '<br>' + "Y: " + lonLat[1].toFixed(6) + '<br>' + "Z: " + z.toFixed()+"m";
+                var content = "X: " + lonLat[0].toFixed(6) + '<br>' + "Y: " + lonLat[1].toFixed(6) + '<br>' + "Z: " + z.toFixed()+" m";
 
                 coordinateOverlay.getElement().innerHTML = content;
                 coordinateOverlay.setPosition(storecoordinate); 
