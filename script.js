@@ -10,9 +10,10 @@ var map = new ol.Map({ // new map (using open layers)
     layers: [ // this is an array for control the layers
         
         new ol.layer.Tile({ // add the tile layer
-            source: new ol.source.XYZ({// source of the tile layer
-                url: "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg",
-            })
+           source: new ol.source.StadiaMaps({
+        layer: 'alidade_satellite',
+        retina: false,
+           })
         })
     ],
     view: new ol.View({            // control map view          
