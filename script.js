@@ -11,7 +11,7 @@ var map = new ol.Map({ // new map (using open layers)
         
         new ol.layer.Tile({ // add the tile layer
             source: new ol.source.XYZ({// source of the tile layer
-                url: "https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=pdE7rAyOBtKDjCnPQAgB",
+                url: 'http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}&s=Ga',
         })
 })
 
