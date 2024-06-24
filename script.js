@@ -9,12 +9,12 @@ var map = new ol.Map({ // new map (using open layers)
     target: 'map',// id map in html
     layers: [ // this is an array for control the layers
         
-          new ol.layer.Tile({ // add the tile layer
+        new ol.layer.Tile({ // add the tile layer
             source: new ol.source.XYZ({// source of the tile layer
-                url: "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}@2x.jpg?api_key=4031eaef-2e75-4076-a8a9-3aa8c7c391f1",
-            })
-
+                url: "https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=pdE7rAyOBtKDjCnPQAgB",
         })
+})
+
     ],
     view: new ol.View({            // control map view          
         center: ol.proj.fromLonLat([0, 0]), //  ol.proj.fromLonLat ==> control the translite the longtitude and latitude to coorinates ||||  ([0, 0]) ===> control the position                              
