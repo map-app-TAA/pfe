@@ -8,19 +8,41 @@ var drawLayer;
 var map = new ol.Map({ // new map (using open layers)
     target: 'map',// id map in html
     layers: [ // this is an array for control the layers
-        
+        new ol.layer.Tile({
+            title: 'Satellite',
+            type: 'base',
+            visible: true,
+            source: new ol.source.OSM()}),
+
         new ol.layer.Tile({ // add the tile layer
             source: new ol.source.XYZ({// source of the tile layer
-                url: 'http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}&s=Ga',
+                url:'http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}&s=Ga',
         })
+}),
+new ol.layer.Tile({
+    title: 'topo',
+    type: 'base',
+    visible: false,
+    source: new ol.source.XYZ({
+        url: 'https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}',
+        attributions: 'Map data ©2024 Google'
+    })
 })
+
 
     ],
     view: new ol.View({            // control map view          
         center: ol.proj.fromLonLat([0, 0]), //  ol.proj.fromLonLat ==> control the translite the longtitude and latitude to coorinates ||||  ([0, 0]) ===> control the position                              
-        zoom: 3
+        zoom: 1 
     })
 });
+ 
+var layerSwitcher = new ol.control.LayerSwitcher({
+    tipLabel: 'Layers'
+
+   
+});
+map.addControl(layerSwitcher);
 
 
 
