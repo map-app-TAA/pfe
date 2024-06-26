@@ -33,7 +33,7 @@ new ol.layer.Tile({
     ],
     view: new ol.View({            // control map view          
         center: ol.proj.fromLonLat([0, 0]), //  ol.proj.fromLonLat ==> control the translite the longtitude and latitude to coorinates ||||  ([0, 0]) ===> control the position                              
-        zoom: 1 
+        zoom: 3
     })
 });
  
