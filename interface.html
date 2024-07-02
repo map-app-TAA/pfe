@@ -3,78 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>map-app-taa</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: Arial, sans-serif;
-            background: url('https://th.bing.com/th/id/R.8057628a7b4d353487b4d7d461ce44c4?rik=UXo0kZaQus8ZVg&riu=http%3a%2f%2fi.imgur.com%2fsK6uid9.jpg&ehk=pch4b%2fsgi8ufhD06Ml7w8l%2bVu1O%2bRSsmEYLf2wG3xA8%3d&risl=1&pid=ImgRaw&r=0') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-        }
-        #container {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        button, select {
-            padding: 10px 20px;
-            margin-top: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-
-        }
-        button:hover{
-            background-color: #057508;
-            color: white;
-            letter-spacing: 2px;
-
-        }
-        select {
-            background-color: #fff;
-            color: black;
-        }
-        .footer {
-            margin-top: 20px;
-            font-size: 12px;
-        }
-        .footer a {
-            color: #00BCD4;
-            text-decoration: none;
-        }
-    </style>
+    <title>MAP</title>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.1.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.1.0/ol.css">
+    <script src="https://unpkg.com/ol-layerswitcher@4.0.0"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@4.0.0/src/ol-layerswitcher.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        <h1>map-app-taa</h1>
-
-        <br>
-        <br>
-        <h3> WELCOME TO OUR MAP </h3>
-        
-        <p> An interface for displaying geo-located Wikipedia articles on a map.</p>
-        <form action="index.html">
-            <button type="submit">Show Map</button>
-        </form>
-        
-        
+    <div id="group">
+        <div id="coordinate-info" class="coordinate-info"></div>
+        <div id="scroll-info" class="scroll-info" style="display: block;">
+            <button id="scroll-info1">Show Coordinate</button>
+        </div>
+        <button id="toggleButton" class="draw-button">Toggle Drawing</button>
+        <button id="removeDrawingButton" class="draw-button">Remove All</button>
+        <button id="locate">My Location</button>
+        <div id="search-input">
+            <input type="number" id="xCoordinateInput" placeholder="X Coordinate">
+            <input type="number" id="yCoordinateInput" placeholder="Y Coordinate">
+            <button id="showLocationButton">Show</button>
+        </div>
     </div>
+    <div id="search-container">
+        <input type="text" id="searchInput" placeholder="Enter location">
+        <button id="searchButton" onclick="search()">Search</button>
+        <div id="destination-input"></div>
+    </div>
+    <div id="map"></div>
+    <script src="script.js"></script>
 </body>
 </html>
