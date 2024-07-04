@@ -222,27 +222,36 @@ document.getElementById('searchInput').addEventListener('input', function(event)
 // Function to handle search
 function search() {
     var query = document.getElementById('searchInput').value;
-    var url = 'https://nominatim.openstreetmap.org/search?q=' + query + '&format=json'; // search about the value and translet to forme json 
-    
+    var url = 'https://nominatim.openstreetmap.org/search?q=' + query + '&format=json';
 
-  
-    
-    fetch(url) // get the url
-        .then(response => response.json()) // when promise done translet the fetch response to  json response and translet it to js
-        .then(data => { // the data become the store of the js response
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
             if (data.length > 0) {
-                var result = data[0]; // show the index 0
-                var lon = parseFloat(result.lon); // get longtutide to index 0
-                var lat = parseFloat(result.lat); // get latutide to index 0
+                var result = data[0];
+                var lon = parseFloat(result.lon);
+                var lat = parseFloat(result.lat);
 
-                map.getView().animate({ center: ol.proj.fromLonLat([lon, lat]), zoom: 10}); 
-                
+                var zoomLevel = 17; // Default zoom level
 
+                // Adjust zoom level based on specific result types
+                if (result.type === 'administrative') {
+                    zoomLevel = 12; // Adjust zoom level for administrative areas
+                } else if (result.type === 'suburb') {
+                    zoomLevel = 16; // Adjust zoom level for suburbs
+                } else {
+                    // Default zoom level remains unchanged (12)
+                }
+
+
+                map.getView().animate({ center: ol.proj.fromLonLat([lon, lat]), zoom: zoomLevel });
             } else {
                 alert('No results found');
             }
-        }) 
+        });
 }
+
+
 
 
 
