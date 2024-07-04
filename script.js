@@ -239,7 +239,8 @@ function search() {
                     zoomLevel = 11.5; // Adjust zoom level for administrative areas
                 } else if (result.type === 'suburb') {
                     zoomLevel = 18; // Adjust zoom level for suburbs
-                } else {
+                }
+                else {
                     // Default zoom level remains unchanged (12)
                 }
 
@@ -250,7 +251,6 @@ function search() {
             }
         });
 }
-
 
 
 
