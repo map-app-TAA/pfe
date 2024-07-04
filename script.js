@@ -232,13 +232,13 @@ function search() {
                 var lon = parseFloat(result.lon);
                 var lat = parseFloat(result.lat);
 
-                var zoomLevel = 17; // Default zoom level
+                var zoomLevel = 19; // Default zoom level
 
                 // Adjust zoom level based on specific result types
                 if (result.type === 'administrative') {
-                    zoomLevel = 12; // Adjust zoom level for administrative areas
+                    zoomLevel = 11.5; // Adjust zoom level for administrative areas
                 } else if (result.type === 'suburb') {
-                    zoomLevel = 16; // Adjust zoom level for suburbs
+                    zoomLevel = 18; // Adjust zoom level for suburbs
                 } else {
                     // Default zoom level remains unchanged (12)
                 }
