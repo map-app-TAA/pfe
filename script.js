@@ -20,7 +20,7 @@ var map = new ol.Map({ // new map (using open layers)
         })
 }),
 new ol.layer.Tile({
-    title: 'topo',
+    title: 'Map view',
     type: 'base',
     visible: false,
     source: new ol.source.XYZ({
