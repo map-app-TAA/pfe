@@ -329,7 +329,7 @@ function showLocation() {
 
     if (!isNaN(xCoordinate) && !isNaN(yCoordinate)) {
         var coordinates = ol.proj.fromLonLat([xCoordinate, yCoordinate]);
-        map.getView().animate({ center: coordinates, zoom: 12 });
+        map.getView().animate({ center: coordinates, zoom: 17 });
         
         // Add a marker at the entered coordinates
         var marker = new ol.Feature({
