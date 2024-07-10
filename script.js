@@ -24,7 +24,7 @@ new ol.layer.Tile({
     type: 'base',
     visible: false,
     source: new ol.source.XYZ({
-        url: 'https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}',
+        url: 'https://mt1.google.com/vt/lyrs=r&hl=en&x={x}&y={y}&z={z}',
         attributions: 'Map data ©2024 Google'
     })
 })
